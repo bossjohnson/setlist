@@ -12,16 +12,16 @@
 
 <body>
 
-    <header>
+    <header id="mainHeader">
         setList Organizer
     </header>
 
     <main>
 
         <nav>
-            <div id="masterList">
-                <a href="">Master List</a>
-            </div>
+            <button id="masterList">
+                Master List
+            </button>
             <div id="setLists">
                 <ul>
 
@@ -30,22 +30,28 @@
         </nav>
         <section id="songs">
             <div id="addToMasterList">
-                <div id="masterListControls">
-                    <button id="closeMasterList" class="fa fa-close fa-3x" title="close">
-                    </button>
-                    <button id="addSongToMasterList" class="fa fa-plus-square-o fa-3x" title="add song">
-                    </button>
-                    <input id="addNewSong" type="text">
+                <div id="masterListWrapper">
+                    <div id="masterListHeader">Master Song List
+                        <button id="clearMasterList" class="fa fa-bomb fa-5x" title="clear master list">
+                        </button>
+                    </div>
+                    <hr>
+                    <div id="masterListControls">
+                        <button id="closeMasterList" class="fa fa-home fa-5x" title="close">
+                        </button>
+                        <button id="addSongToMasterList" class="fa fa-plus-square-o fa-5x" title="add song">
+                        </button>
+                        <input id="addNewSong" type="text">
+                        <button id="cancelAddSong" class="fa fa-times-circle-o">
+                        </button>
+                    </div>
                 </div>
-                <span id="masterListHeader">Master Song List<button id="clearMasterList" class="fa fa-bomb fa-3x" title="clear master list">
-                </button></span>
 
-                <hr>
                 <ul id="masterSongList">
-
                 </ul>
+
             </div>
-            songs
+            songs in current setlist go here
         </section>
 
     </main>

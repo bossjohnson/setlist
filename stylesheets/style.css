@@ -1,7 +1,8 @@
 * {
   margin: 0;
   box-sizing: border-box;
-  text-align: center; }
+  text-align: center;
+  outline: none; }
 
 a {
   text-decoration: none;
@@ -21,12 +22,10 @@ header {
 
 main {
   position: relative;
-  border: 2px dashed blue;
   display: flex;
   flex-grow: 1; }
 
 nav {
-  border: 2px dotted green;
   width: 15%;
   display: flex;
   flex-direction: column; }
@@ -46,7 +45,6 @@ footer {
   background-color: #ee82ee; }
 
 #setLists {
-  border: 2px dotted purple;
   flex-grow: 1;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -61,41 +59,60 @@ footer {
   top: 0;
   height: 100%;
   width: 100%;
-  border: 8px dotted silver;
   background-color: white;
   z-index: 1;
-  overflow-y: scroll; }
+  display: flex;
+  flex-direction: column; }
 
 #masterListHeader {
-  text-decoration: underline;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  position: relative; }
 
 #masterListControls {
-  border: 2px dotted black;
   display: flex;
   justify-content: flex-start;
   align-items: center; }
 
-#addSongToMasterList, #closeMasterList, #clearMasterList {
+#addSongToMasterList, #closeMasterList, #clearMasterList, #cancelAddSong {
   border-radius: 8px;
   font-weight: bold;
-  font-size: 0.5em;
-  padding: 1%;
+  font-size: 0.8em;
+  padding: 2%;
   display: inline-block;
   background-color: green; }
-  #addSongToMasterList:hover, #closeMasterList:hover, #clearMasterList:hover {
-    outline: none; }
 
 #addNewSong {
   font-size: 0.8em;
-  width: 100%; }
+  width: 100%;
+  border: 1px solid black;
+  border-radius: 8px; }
 
-#closeMasterList, #clearMasterList {
+#closeMasterList {
   background-color: orange; }
 
 #clearMasterList {
-  background-color: red; }
+  background-color: red;
+  text-decoration: none;
+  font-size: .5em;
+  padding: 1%;
+  position: absolute;
+  right: 5%;
+  top: 0; }
+
+#cancelAddSong {
+  color: black;
+  background-color: white;
+  border: none; }
+
+#masterListWrapper {
+  margin: 0; }
+
+#masterSongList {
+  text-align: left;
+  overflow-y: scroll; }
+  #masterSongList li {
+    text-align: left; }
 
 /*# sourceMappingURL=style.css.map */

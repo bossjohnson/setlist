@@ -2,13 +2,14 @@ $(document).ready(function() {
     var $addToMasterList = $('#addToMasterList');
     $addToMasterList.hide();
     $('#addNewSong').hide();
+    $('#cancelAddSong').hide();
 
     var masterList = JSON.parse(localStorage.getItem('masterList'));
     if (masterList === null) {
         masterList = [];
         localStorage.setItem('masterList', JSON.stringify(masterList));
     }
-    populateMasterSongList(masterList);
+    updateMasterSongList(masterList);
 
     $('#masterList').click(function(e) {
         e.preventDefault();
@@ -17,7 +18,13 @@ $(document).ready(function() {
 
     $('#addSongToMasterList').click(function() {
         $('#addNewSong').show();
+        $('#cancelAddSong').show();
         $('#addNewSong').focus();
+    });
+
+    $('#cancelAddSong').click(function() {
+      $(this).hide();
+      $('#addNewSong').hide();
     });
 
     $('#closeMasterList').click(function() {
@@ -26,7 +33,7 @@ $(document).ready(function() {
 
     $('#clearMasterList').click(function() {
         masterList = [];
-        populateMasterSongList(masterList);
+        updateMasterSongList(masterList);
     });
 
     $('#addNewSong').keydown(function(key) {
@@ -38,16 +45,18 @@ $(document).ready(function() {
 
             $('#addNewSong').val('');
             $('#addNewSong').hide();
+            $('#cancelAddSong').hide();
             $('#masterSongList').empty();
-            populateMasterSongList(masterList);
+            updateMasterSongList(masterList);
         } else if (key.keyCode === 27) {
             $('#addNewSong').val('');
             $('#addNewSong').hide();
+            $('#cancelAddSong').hide();
         }
     });
 });
 
-function populateMasterSongList(list) {
+function updateMasterSongList(list) {
     localStorage.setItem('masterList', JSON.stringify(list));
     $('#masterSongList').empty();
     for (var song of list) {
