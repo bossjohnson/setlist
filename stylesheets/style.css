@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center; }
+
+a {
+  text-decoration: none;
+  color: black; }
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 50pt; }
+  body * {
+    margin: 1%; }
+
+header {
+  border: 2px dotted red; }
+
+main {
+  position: relative;
+  border: 2px dashed blue;
+  display: flex;
+  flex-grow: 1; }
+
+nav {
+  border: 2px dotted green;
+  width: 15%;
+  display: flex;
+  flex-direction: column; }
+
+footer {
+  border: 2px dotted yellow; }
+
+#songs {
+  border: 2px dotted black;
+  width: 85%; }
+
+#masterList {
+  border: 5px solid black;
+  border-radius: 10px;
+  flex-grow: 0;
+  font-size: 0.65em;
+  background-color: #ee82ee; }
+
+#setLists {
+  border: 2px dotted purple;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-size: 0.7em; }
+  #setLists ul {
+    list-style-type: none; }
+
+#addToMasterList {
+  position: absolute;
+  margin: 0;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border: 8px dotted silver;
+  background-color: white;
+  z-index: 1;
+  overflow-y: scroll; }
+
+#masterListHeader {
+  text-decoration: underline;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+#masterListControls {
+  border: 2px dotted black;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center; }
+
+#addSongToMasterList, #closeMasterList, #clearMasterList {
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.5em;
+  padding: 1%;
+  display: inline-block;
+  background-color: green; }
+  #addSongToMasterList:hover, #closeMasterList:hover, #clearMasterList:hover {
+    outline: none; }
+
+#addNewSong {
+  font-size: 0.8em;
+  width: 100%; }
+
+#closeMasterList, #clearMasterList {
+  background-color: orange; }
+
+#clearMasterList {
+  background-color: red; }
+
+/*# sourceMappingURL=style.css.map */
