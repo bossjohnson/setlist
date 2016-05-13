@@ -46,8 +46,7 @@ footer {
   background-color: #ee82ee; }
 
 #newSetList {
-  background-color: forestgreen;
-  font-size: 0.9em; }
+  background-color: forestgreen; }
 
 #setLists {
   border: 5px solid black;
@@ -132,11 +131,15 @@ footer {
     border: 1px solid black;
     width: 46%;
     margin: 1%;
+    padding-left: 2%;
     overflow-x: hidden;
     overflow-y: scroll; }
     #newSetListColumns div li {
-      list-style-position: inside;
-      text-align: left; }
+      margin-top: 2%;
+      padding-left: 2%;
+      text-align: center;
+      border: 1px solid black;
+      border-radius: 5px; }
 
 #saveNewList {
   background-color: green; }

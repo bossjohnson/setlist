@@ -33,7 +33,6 @@ $(document).ready(function() {
             // console.log(!$(this).selected);
 
             if (!$(this).attr('selected')) {
-                console.log($(this).attr('selected'));
                 $(this).attr('selected', 'true');
                 $('#songsSelected ol').append($(this));
             } else {
@@ -99,7 +98,8 @@ $(document).ready(function() {
     });
 
     $('#saveNewList').click(function() {
-        console.log('save playlist');
+        console.log('saving playlist...');
+        
 
         $('#newSetListName').val('');
         $('#newSetListScreen').hide();
