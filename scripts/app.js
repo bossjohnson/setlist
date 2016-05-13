@@ -22,7 +22,7 @@ $(document).ready(function() {
         $('#newSetListName').focus();
         $('#newSetListName').val('');
         $('#songsSelected').children().first().text('New Setlist');
-        $('#songsSelected ul').empty();
+        $('#songsSelected ol').empty();
         var masterList = JSON.parse(localStorage.getItem('masterList'));
         $('#songsAvailable ul').empty();
         for (var song of masterList) {
@@ -65,6 +65,7 @@ $(document).ready(function() {
     });
 
     $('.removeSong').click(function() {
+        var masterList = JSON.parse(localStorage.getItem('masterList'));
         var songName = $(this).parent().text();
         var index = masterList.indexOf(songName);
         masterList.splice(index, 1);
@@ -99,8 +100,15 @@ $(document).ready(function() {
 
     $('#saveNewList').click(function() {
         console.log('saving playlist...');
-        
-
+        var listName = $('#songsSelected span').text();
+        var newList = [];
+        var $songs = $('#songsSelected ol').children();
+        var listLength = $('#songsSelected ol').children().length;
+        for (var i = 0; i < listLength; i++) {
+            newList.push($songs[i].innerText);
+        }
+        localStorage.setItem(listName, JSON.stringify(newList));
+        console.log(localStorage);
         $('#newSetListName').val('');
         $('#newSetListScreen').hide();
     });
