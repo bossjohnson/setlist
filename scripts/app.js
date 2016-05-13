@@ -169,4 +169,7 @@ function handleSetListClick() {
     for (var song of setLists[setListName]) {
       $('#songs ol').append($('<li>' + song + '</li>'));
     }
+    $('#songsWrapper li').click(function () {
+      $(this).toggleClass('strikeThrough');
+    });
 }

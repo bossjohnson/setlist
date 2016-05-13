@@ -187,4 +187,7 @@ footer {
 #editThisList {
   background-color: darkorange; }
 
+.strikeThrough {
+  text-decoration: line-through; }
+
 /*# sourceMappingURL=style.css.map */
