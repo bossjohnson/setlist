@@ -10,7 +10,13 @@ $(document).ready(function() {
         masterList = [];
         localStorage.setItem('masterList', JSON.stringify(masterList));
     }
+    var setLists = JSON.parse(localStorage.getItem('setLists'));
+    if (setLists === null) {
+        setLists = {};
+        localStorage.setItem('setLists', JSON.stringify(setLists));
+    }
     updateMasterSongList(masterList);
+    updateSetLists();
 
     $('#masterList').click(function(e) {
         e.preventDefault();
@@ -100,6 +106,7 @@ $(document).ready(function() {
 
     $('#saveNewList').click(function() {
         console.log('saving playlist...');
+        var setLists = JSON.parse(localStorage.getItem('setLists'));
         var listName = $('#songsSelected span').text();
         var newList = [];
         var $songs = $('#songsSelected ol').children();
@@ -107,12 +114,14 @@ $(document).ready(function() {
         for (var i = 0; i < listLength; i++) {
             newList.push($songs[i].innerText);
         }
-        localStorage.setItem(listName, JSON.stringify(newList));
-        console.log(localStorage);
+        setLists[listName] = newList;
+        localStorage.setItem('setLists', JSON.stringify(setLists));
         $('#newSetListName').val('');
         $('#newSetListScreen').hide();
+        updateSetLists();
     });
 
+    $('#setLists li').click(handleSetListClick);
 });
 
 function updateMasterSongList(list) {
@@ -129,4 +138,24 @@ function updateMasterSongList(list) {
         localStorage.setItem('masterList', JSON.stringify(list));
         $(this).parent().remove();
     });
+}
+
+function updateSetLists() {
+    var setLists = JSON.parse(localStorage.getItem('setLists'));
+    $('#setLists ul').empty();
+    for (var setList in setLists) {
+        $('#setLists ul').append($('<li>' + setList + '</li>'));
+    }
+    $('#setLists li').click(handleSetListClick);
+}
+
+function handleSetListClick() {
+    var setListName = $(this).text();
+    var setLists = JSON.parse(localStorage.getItem('setLists'));
+    $('#songs').empty();
+    $('#songs').prepend($(this).text());
+    $('#songs').append($('<hr><ol></ol>'));
+    for (var song of setLists[setListName]) {
+      $('#songs ol').append($('<li>' + song + '</li>'));
+    }
 }
