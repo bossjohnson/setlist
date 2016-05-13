@@ -122,6 +122,15 @@ $(document).ready(function() {
     });
 
     $('#setLists li').click(handleSetListClick);
+    $('#deleteThisList').click(function () {
+      console.log('click');
+      var setLists = JSON.parse(localStorage.getItem('setLists'));
+      delete setLists[$(this).prev().text()];
+      localStorage.setItem('setLists', JSON.stringify(setLists));
+      $('#songsWrapper').empty();
+      $('#songsHeader span').empty();
+      updateSetLists();
+    });
 });
 
 function updateMasterSongList(list) {
@@ -152,9 +161,11 @@ function updateSetLists() {
 function handleSetListClick() {
     var setListName = $(this).text();
     var setLists = JSON.parse(localStorage.getItem('setLists'));
-    $('#songs').empty();
-    $('#songs').prepend($(this).text());
-    $('#songs').append($('<hr><ol></ol>'));
+    $('#songsHeader span').empty();
+    $('#songsHeader span').append(setListName);
+
+    $('#songsWrapper').empty();
+    $('#songsWrapper').append($('<hr><ol></ol>'));
     for (var song of setLists[setListName]) {
       $('#songs ol').append($('<li>' + song + '</li>'));
     }

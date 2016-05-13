@@ -105,7 +105,7 @@ footer {
   justify-content: space-between;
   align-items: center; }
 
-#addSongToMasterList, #goHome, #goHome2, #saveNewList, #clearMasterList, #cancelAddSong {
+#addSongToMasterList, #goHome, #goHome2, #saveNewList, #clearMasterList, #deleteThisList, #cancelAddSong, #editThisList {
   border-radius: 8px;
   font-weight: bold;
   font-size: 0.8em;
@@ -126,7 +126,7 @@ footer {
 #masterSongListSpan {
   flex-grow: 1; }
 
-#clearMasterList {
+#clearMasterList, #deleteThisList {
   background-color: red;
   float: right; }
 
@@ -174,5 +174,17 @@ footer {
 
 #saveNewList {
   background-color: green; }
+
+#songsHeader {
+  display: flex;
+  justify-content: space-between; }
+  #songsHeader span {
+    flex-grow: 1;
+    font-size: 1em; }
+  #songsHeader button {
+    flex-grow: 0; }
+
+#editThisList {
+  background-color: darkorange; }
 
 /*# sourceMappingURL=style.css.map */
