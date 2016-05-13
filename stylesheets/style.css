@@ -26,7 +26,7 @@ main {
   flex-grow: 1; }
 
 nav {
-  width: 15%;
+  width: 20%;
   display: flex;
   flex-direction: column; }
 
@@ -35,24 +35,31 @@ footer {
 
 #songs {
   border: 2px dotted black;
-  width: 85%; }
+  width: 80%; }
 
-#masterList {
+#masterList, #newSetList {
   border: 5px solid black;
   border-radius: 10px;
-  flex-grow: 0;
-  font-size: 0.65em;
+  flex-grow: 1;
+  font-size: 0.8em;
+  padding: 5% 0;
   background-color: #ee82ee; }
 
+#newSetList {
+  background-color: forestgreen;
+  font-size: 0.9em; }
+
 #setLists {
-  flex-grow: 1;
+  border: 5px solid black;
+  border-radius: 10px;
+  flex-grow: 20;
   overflow-x: hidden;
   overflow-y: scroll;
   font-size: 0.7em; }
   #setLists ul {
     list-style-type: none; }
 
-#addToMasterList {
+#addToMasterList, #newSetListScreen {
   position: absolute;
   margin: 0;
   left: 0;
@@ -64,7 +71,7 @@ footer {
   display: flex;
   flex-direction: column; }
 
-#masterListHeader {
+#masterListHeader, #newSetListWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -72,10 +79,10 @@ footer {
 
 #masterListControls {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center; }
 
-#addSongToMasterList, #closeMasterList, #clearMasterList, #cancelAddSong {
+#addSongToMasterList, #goHome, #goHome2, #saveNewList, #clearMasterList, #cancelAddSong {
   border-radius: 8px;
   font-weight: bold;
   font-size: 0.8em;
@@ -83,36 +90,55 @@ footer {
   display: inline-block;
   background-color: green; }
 
-#addNewSong {
+#addNewSong, #newSetListName {
   font-size: 0.8em;
   width: 100%;
   border: 1px solid black;
   border-radius: 8px; }
 
-#closeMasterList {
+#goHome, #goHome2, #saveNewList {
+  font-size: 0.8em;
   background-color: orange; }
+
+#masterSongListSpan {
+  flex-grow: 1; }
 
 #clearMasterList {
   background-color: red;
-  text-decoration: none;
-  font-size: .5em;
-  padding: 1%;
-  position: absolute;
-  right: 5%;
-  top: 0; }
+  float: right; }
 
 #cancelAddSong {
   color: black;
   background-color: white;
   border: none; }
 
-#masterListWrapper {
-  margin: 0; }
-
 #masterSongList {
   text-align: left;
   overflow-y: scroll; }
   #masterSongList li {
-    text-align: left; }
+    text-align: left;
+    padding: 1%;
+    border: 1px solid black;
+    border-radius: 5px; }
+    #masterSongList li button {
+      float: right; }
+
+#newSetListColumns {
+  border: 1px solid black;
+  height: 100%;
+  display: flex;
+  justify-content: center; }
+  #newSetListColumns div {
+    border: 1px solid black;
+    width: 46%;
+    margin: 1%;
+    overflow-x: hidden;
+    overflow-y: scroll; }
+    #newSetListColumns div li {
+      list-style-position: inside;
+      text-align: left; }
+
+#saveNewList {
+  background-color: green; }
 
 /*# sourceMappingURL=style.css.map */

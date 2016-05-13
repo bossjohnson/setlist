@@ -20,7 +20,9 @@
 
         <nav>
             <button id="masterList">
-                Master List
+                Master
+            </button>
+            <button id="newSetList" class="fa fa-plus">
             </button>
             <div id="setLists">
                 <ul>
@@ -28,31 +30,58 @@
                 </ul>
             </div>
         </nav>
+
         <section id="songs">
-            <div id="addToMasterList">
-                <div id="masterListWrapper">
-                    <div id="masterListHeader">Master Song List
-                        <button id="clearMasterList" class="fa fa-bomb fa-5x" title="clear master list">
-                        </button>
-                    </div>
-                    <hr>
-                    <div id="masterListControls">
-                        <button id="closeMasterList" class="fa fa-home fa-5x" title="close">
-                        </button>
-                        <button id="addSongToMasterList" class="fa fa-plus-square-o fa-5x" title="add song">
-                        </button>
-                        <input id="addNewSong" type="text">
-                        <button id="cancelAddSong" class="fa fa-times-circle-o">
-                        </button>
-                    </div>
-                </div>
-
-                <ul id="masterSongList">
-                </ul>
-
-            </div>
             songs in current setlist go here
         </section>
+
+        <section id="addToMasterList">
+
+            <div id="masterListHeader">
+                <button id="goHome" class="goHome fa fa-home fa-5x">
+                </button>
+                <span id='masterSongListSpan'>Master Song List</span>
+                <button id="clearMasterList" class="fa fa-bomb fa-5x" title="clear master list">
+                </button>
+            </div>
+            <hr>
+            <div id="masterListControls">
+                <button id="addSongToMasterList" class="fa fa-plus fa-5x" title="add song">
+                </button>
+                <input id="addNewSong" type="text">
+                <button id="cancelAddSong" class="fa fa-times-circle-o">
+                </button>
+            </div>
+
+
+            <ul id="masterSongList">
+            </ul>
+
+        </section>
+
+        <section id="newSetListScreen">
+            <div id="newSetListWrapper">
+                <button id="goHome2" class="goHome fa fa-home fa-5x">
+                </button>
+                <input id="newSetListName" type="text" placeholder="enter a new playlist name">
+                <button id="saveNewList" class="fa fa-save">
+                </button>
+            </div>
+            <hr>
+            <div id="newSetListColumns">
+                <div id="songsAvailable">
+                    <span>Available Songs</span>
+                    <hr>
+                    <ul></ul>
+                </div>
+                <div id="songsSelected">
+                    <span>new setlist</span>
+                    <hr>
+                    <ol></ol>
+                </div>
+            </div>
+        </section>
+
 
     </main>
 
