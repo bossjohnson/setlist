@@ -17,11 +17,6 @@ body {
   body * {
     margin: 1%; }
 
-header {
-  font-size: .5em;
-  border: 2px dotted red;
-  margin: 0; }
-
 main {
   position: relative;
   display: flex;
@@ -104,7 +99,7 @@ nav {
   justify-content: space-between;
   align-items: center; }
 
-#addSongToMasterList, #goHome, #goHome2, #saveNewList, #clearMasterList, #deleteThisList, #cancelAddSong, #editThisList {
+#addSongToMasterList, #goHome, #goHome2, #saveNewList, .save, #clearMasterList, #deleteThisList, #cancelAddSong, #editThisList {
   border-radius: 8px;
   font-weight: bold;
   font-size: 0.8em;
@@ -118,7 +113,7 @@ nav {
   border: 1px solid black;
   border-radius: 8px; }
 
-#goHome, #goHome2, #saveNewList {
+#goHome, #goHome2, #saveNewList, .save {
   font-size: 0.8em;
   background-color: orange; }
 
@@ -171,7 +166,7 @@ nav {
       list-style-position: inside;
       left: -13%; }
 
-#saveNewList {
+#saveNewList, .save {
   background-color: green; }
 
 #songsHeader {
@@ -182,11 +177,18 @@ nav {
     font-size: 1em; }
   #songsHeader button {
     flex-grow: 0; }
+  #songsHeader #editThisList {
+    display: none; }
+  #songsHeader #deleteThisList {
+    display: none; }
 
 #editThisList {
   background-color: darkorange; }
 
 .strikeThrough {
   text-decoration: line-through; }
+
+.removeSong {
+  float: right; }
 
 /*# sourceMappingURL=style.css.map */

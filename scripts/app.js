@@ -105,7 +105,6 @@ $(document).ready(function() {
     });
 
     $('#saveNewList').click(function() {
-        console.log('saving playlist...');
         var setLists = JSON.parse(localStorage.getItem('setLists'));
         var listName = $('#songsSelected span').text();
         var newList = [];
@@ -122,15 +121,17 @@ $(document).ready(function() {
     });
 
     $('#setLists li').click(handleSetListClick);
-    $('#deleteThisList').click(function () {
-      console.log('click');
-      var setLists = JSON.parse(localStorage.getItem('setLists'));
-      delete setLists[$(this).prev().text()];
-      localStorage.setItem('setLists', JSON.stringify(setLists));
-      $('#songsWrapper').empty();
-      $('#songsHeader span').empty();
-      updateSetLists();
+    $('#deleteThisList').click(function() {
+        var setLists = JSON.parse(localStorage.getItem('setLists'));
+        delete setLists[$(this).prev().text()];
+        localStorage.setItem('setLists', JSON.stringify(setLists));
+        $('#songsWrapper').empty();
+        $('#songsHeader span').empty();
+        updateSetLists();
     });
+
+    // $('#editThisList').click(editList);
+
 });
 
 function updateMasterSongList(list) {
@@ -159,17 +160,68 @@ function updateSetLists() {
 }
 
 function handleSetListClick() {
+    $('#editThisList').show();
+    $('#deleteThisList').show();
+    $('.save').remove();
     var setListName = $(this).text();
     var setLists = JSON.parse(localStorage.getItem('setLists'));
     $('#songsHeader span').empty();
     $('#songsHeader span').append(setListName);
 
+
     $('#songsWrapper').empty();
     $('#songsWrapper').append($('<hr><ol></ol>'));
     for (var song of setLists[setListName]) {
-      $('#songs ol').append($('<li>' + song + '</li>'));
+        $('#songs ol').append($('<li>' + song + '</li>'));
     }
-    $('#songsWrapper li').click(function () {
-      $(this).toggleClass('strikeThrough');
+    $('#songsWrapper li').click(function() {
+        $(this).toggleClass('strikeThrough');
     });
+
+    $('#editThisList').off('click');
+    $('#editThisList').click(editList);
+}
+
+function editList() {
+    $(this).off('click');
+    var $saveThisList = $('<button class="save fa fa-save"></button>');
+    $(this).after($saveThisList);
+
+    $('.save').click(function() {
+
+        $('.removeSong').remove();
+        $('#songsWrapper li').css('border', 'none');
+
+        var setLists = JSON.parse(localStorage.getItem('setLists'));
+        var setListName = $('#songsHeader span').text();
+        var $songs = $('#songsWrapper ol').children();
+        var newList = [];
+
+
+        for (var i = 0; i < $songs.length; i++) {
+            newList.push($songs[i].innerText);
+        }
+        console.log(newList);
+        setLists[setListName] = newList;
+        localStorage.setItem('setLists', JSON.stringify(setLists));
+
+
+
+        $('#editThisList').click(editList);
+        $(this).remove();
+    });
+
+    $('#songsWrapper li').css({
+        'border': '3px outset gray',
+        'border-radius': '8px'
+    });
+    var $removeSong = $('<button class="removeSong fa fa-times-circle-o"></button>');
+    $('#songsWrapper li').prepend($removeSong);
+    $('#songsWrapper .removeSong').click(function() {
+        $(this).parent().remove();
+    });
+}
+
+function saveEditedList() {
+
 }
