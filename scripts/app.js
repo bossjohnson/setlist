@@ -106,7 +106,7 @@ $(document).ready(function() {
 
     $('#saveNewList').click(function() {
         var setLists = JSON.parse(localStorage.getItem('setLists'));
-        var listName = $('#songsSelected span').text();
+        var listName = $('#newSetListName').text();
         var newList = [];
         var $songs = $('#songsSelected ol').children();
         var listLength = $('#songsSelected ol').children().length;
@@ -127,6 +127,8 @@ $(document).ready(function() {
         localStorage.setItem('setLists', JSON.stringify(setLists));
         $('#songsWrapper').empty();
         $('#songsHeader span').empty();
+        $(this).hide();
+        $('#editThisList').hide();
         updateSetLists();
     });
 

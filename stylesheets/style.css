@@ -43,6 +43,7 @@ nav {
   border-radius: 10px;
   height: 20%;
   font-size: 0.8em;
+  font-weight: bold;
   padding: 5% 0;
   background-color: #ee82ee;
   display: flex;
@@ -59,6 +60,9 @@ nav {
   flex-grow: 1;
   overflow-y: scroll;
   font-size: 0.7em; }
+  #setLists span {
+    font-size: 1.5em;
+    font-weight: bold; }
   #setLists ul {
     list-style-type: none;
     display: flex;
@@ -74,7 +78,8 @@ nav {
       text-align: left;
       padding: 2%;
       overflow-x: hidden;
-      width: 100%; }
+      width: 100%;
+      box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.5); }
 
 #addToMasterList, #newSetListScreen {
   position: absolute;
@@ -140,6 +145,13 @@ nav {
     #masterSongList li button {
       float: right; }
 
+#newSetListName {
+  max-width: 90%;
+  border: none; }
+
+#newSetListWrapper {
+  justify-content: flex-start; }
+
 #newSetListColumns {
   border: 1px solid black;
   height: 100%;
@@ -190,5 +202,17 @@ nav {
 
 .removeSong {
   float: right; }
+
+.smallText {
+  font-size: 0.5em; }
+
+.bold {
+  font-weight: bold; }
+
+.widerHr {
+  height: 15px;
+  border: 5px outset gray;
+  border-radius: 8px;
+  background-color: darkgray; }
 
 /*# sourceMappingURL=style.css.map */
