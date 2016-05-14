@@ -32,13 +32,13 @@ nav {
 
 #songs {
   border: 2px dotted black;
-  width: 75%; }
+  width: 100%; }
   #songs ol {
     list-style-position: inside; }
     #songs ol li {
       text-align: left; }
 
-#masterList, #newSetList {
+#masterList, #hideNav, #showNav, #newSetList {
   border: 5px solid black;
   border-radius: 10px;
   height: 20%;
@@ -49,6 +49,12 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center; }
+
+#hideNav, #showNav {
+  background-color: lightblue; }
+
+#showNav {
+  display: none; }
 
 #newSetList {
   background-color: forestgreen; }

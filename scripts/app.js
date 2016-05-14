@@ -132,7 +132,16 @@ $(document).ready(function() {
         updateSetLists();
     });
 
-    // $('#editThisList').click(editList);
+    $('#hideNav').click(function () {
+      $('nav').hide();
+      $('#showNav').show();
+      // $('#songs').css('width', '100%');
+    });
+
+    $('#showNav').click(function () {
+      $('nav').show();
+      $(this).hide();
+    });
 
 });
 
