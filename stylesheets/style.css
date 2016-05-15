@@ -26,17 +26,26 @@ main {
   margin: 0; }
 
 nav {
-  width: 25%;
+  padding: 1%;
+  border: 3px solid black;
+  border-radius: 8px;
+  width: 35%;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  box-shadow: 6px 6px 2px 2px rgba(0, 0, 0, 0.5);
+  background-color: seashell; }
 
 hr {
   height: 5px;
   background-color: black; }
 
 #songs {
+  padding: 1%;
+  border: 3px solid black;
+  border-radius: 8px;
   width: 100%;
-  overflow-y: scroll; }
+  overflow-y: scroll;
+  box-shadow: 6px 6px 2px 2px rgba(0, 0, 0, 0.5); }
   #songs ol {
     list-style-position: inside;
     position: relative;
