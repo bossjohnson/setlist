@@ -13,7 +13,8 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
-  font-size: 50pt; }
+  font-size: 50pt;
+  background-color: gainsboro; }
   body * {
     margin: 1%; }
 
@@ -45,6 +46,7 @@ hr {
   border-radius: 8px;
   width: 100%;
   overflow-y: scroll;
+  background-color: snow;
   box-shadow: 6px 6px 2px 2px rgba(0, 0, 0, 0.5); }
   #songs ol {
     list-style-position: inside;
@@ -71,7 +73,9 @@ hr {
 
 #showNav {
   display: none;
-  padding: 1%; }
+  padding: 1%;
+  margin-right: 0;
+  margin-left: 5px; }
 
 #newSetList {
   background-color: forestgreen; }
