@@ -218,7 +218,8 @@ hr {
 .removeSong {
   float: right; }
 
-.moveSongUp, .moveSongDown {
+.moveSongDown,
+.moveSongUp {
   float: left; }
 
 .smallText {

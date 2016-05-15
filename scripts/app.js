@@ -179,9 +179,8 @@ function handleSetListClick() {
     $('#songsHeader span').empty();
     $('#songsHeader span').append(setListName);
 
-
     $('#songsWrapper').empty();
-    $('#songsWrapper').append($('<hr><ol></ol>'));
+    $('#songsWrapper').append($('<hr><div class="smallText">tap songs to toggle strikethrough</div><ol></ol>'));
     for (var song of setLists[setListName]) {
         $('#songs ol').append($('<li>' + song + '</li>'));
     }
@@ -195,13 +194,20 @@ function handleSetListClick() {
 
 function editList() {
     $(this).off('click');
+    $('#songsWrapper span').hide();
+    $('#songsWrapper li').off('click');
+    $('#songsWrapper li').removeClass('strikeThrough');
     var $saveThisList = $('<button class="save fa fa-save"></button>');
     $(this).after($saveThisList);
 
     $('.save').click(function() {
 
+        $('#songsWrapper span').show();
         $('.setListEditControls').remove();
         $('#songsWrapper li').css('border', 'none');
+        $('#songsWrapper li').click(function() {
+            $(this).toggleClass('strikeThrough');
+        });
 
         var setLists = JSON.parse(localStorage.getItem('setLists'));
         var setListName = $('#songsHeader span').text();
