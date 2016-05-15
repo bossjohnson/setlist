@@ -194,7 +194,7 @@ function handleSetListClick() {
 
 function editList() {
     $(this).off('click');
-    $('#songsWrapper span').hide();
+    $('#songsWrapper .smallText').hide();
     $('#songsWrapper li').off('click');
     $('#songsWrapper li').removeClass('strikeThrough');
     var $saveThisList = $('<button class="save fa fa-save"></button>');
@@ -202,7 +202,7 @@ function editList() {
 
     $('.save').click(function() {
 
-        $('#songsWrapper span').show();
+        $('#songsWrapper .smallText').show();
         $('.setListEditControls').remove();
         $('#songsWrapper li').css('border', 'none');
         $('#songsWrapper li').click(function() {
