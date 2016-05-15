@@ -200,7 +200,7 @@ function editList() {
 
     $('.save').click(function() {
 
-        $('.removeSong').remove();
+        $('.setListEditControls').remove();
         $('#songsWrapper li').css('border', 'none');
 
         var setLists = JSON.parse(localStorage.getItem('setLists'));
@@ -223,13 +223,29 @@ function editList() {
     });
 
     $('#songsWrapper li').css({
-        'border': '3px outset gray',
+        'border': '6px outset gray',
         'border-radius': '8px'
     });
+    var $controlDiv = $('<div class="setListEditControls"></div>')
     var $removeSong = $('<button class="removeSong fa fa-times-circle-o"></button>');
-    $('#songsWrapper li').prepend($removeSong);
+    var $moveSongUp = $('<button class="moveSongUp fa fa-arrow-circle-o-up"></button>')
+    var $moveSongDown = $('<button class="moveSongDown fa fa-arrow-circle-o-down"></button>')
+
+    $('#songsWrapper li').append($controlDiv);
+    $('.setListEditControls').append($moveSongUp);
+    $('.setListEditControls').append($moveSongDown);
+    $('.setListEditControls').append($removeSong);
+
     $('#songsWrapper .removeSong').click(function() {
-        $(this).parent().remove();
+        $(this).parent().parent().remove();
+    });
+    $('#songsWrapper .moveSongUp').click(function (e) {
+      e.stopPropagation();
+      $(this).parent().parent().prev().before($(this).parent().parent());
+    });
+    $('#songsWrapper .moveSongDown').click(function (e) {
+      e.stopPropagation();
+      $(this).parent().parent().next().after($(this).parent().parent());
     });
 }
 

@@ -30,13 +30,20 @@ nav {
   display: flex;
   flex-direction: column; }
 
+hr {
+  height: 5px;
+  background-color: black; }
+
 #songs {
-  border: 2px dotted black;
-  width: 100%; }
+  width: 100%;
+  overflow-y: scroll; }
   #songs ol {
-    list-style-position: inside; }
+    list-style-position: inside;
+    position: relative;
+    left: -5%; }
     #songs ol li {
-      text-align: left; }
+      text-align: left;
+      overflow: auto; }
 
 #masterList, #hideNav, #showNav, #newSetList {
   border: 5px solid black;
@@ -54,7 +61,8 @@ nav {
   background-color: lightblue; }
 
 #showNav {
-  display: none; }
+  display: none;
+  padding: 1%; }
 
 #newSetList {
   background-color: forestgreen; }
@@ -71,6 +79,7 @@ nav {
     font-weight: bold; }
   #setLists ul {
     list-style-type: none;
+    list-style-position: inside;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -78,13 +87,13 @@ nav {
     #setLists ul li {
       margin-top: 10%;
       position: relative;
-      left: -13%;
+      left: -20%;
       border: 3px outset gray;
       border-radius: 8px;
       text-align: left;
       padding: 2%;
       overflow-x: hidden;
-      width: 100%;
+      width: 110%;
       box-shadow: 3px 3px 2px 2px rgba(0, 0, 0, 0.5); }
 
 #addToMasterList, #newSetListScreen {
@@ -209,6 +218,9 @@ nav {
 .removeSong {
   float: right; }
 
+.moveSongUp, .moveSongDown {
+  float: left; }
+
 .smallText {
   font-size: 0.5em; }
 
@@ -220,5 +232,9 @@ nav {
   border: 5px outset gray;
   border-radius: 8px;
   background-color: darkgray; }
+
+.setListEditControls {
+  background-color: linen;
+  overflow: auto; }
 
 /*# sourceMappingURL=style.css.map */
